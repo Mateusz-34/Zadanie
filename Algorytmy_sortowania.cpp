@@ -8,7 +8,7 @@ const int rozmiar = 12;
 
 void wypelnijTab(int tablica[], int n) {
     srand(time(NULL));
-    for (int i = 0; i < n; i++) tablica[i] = rand() % 100;
+    for (int i = 0; i < n; i++) tablica[i] = rand() % 100 +1;
 }
 
 void drukujTab(int tablica[], int n) {
