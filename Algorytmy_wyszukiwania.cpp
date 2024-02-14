@@ -78,6 +78,7 @@ void wyswietl_wynik_wyszukiwania(const char *algorytm, int wynik) {
 }
 
 int main() {
+    
     int tablica[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
     int rozmiar = sizeof(tablica) / sizeof(tablica[0]);
     int klucz = 7;
