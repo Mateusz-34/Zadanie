@@ -8,11 +8,11 @@ const int rozmiar = 12;
 
 void wypelnijTab(int tablica[], int n) {
     srand(time(NULL));
-    for (int i = 0; i < n; ++i) tablica[i] = rand() % 100;
+    for (int i = 0; i < n; i++) tablica[i] = rand() % 100;
 }
 
 void drukujTab(int tablica[], int n) {
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; i++) {
         cout << tablica[i];
         if (i < n - 1) {
             cout << " ";
@@ -22,7 +22,7 @@ void drukujTab(int tablica[], int n) {
 }
 
 void sortowanie_babelkowe(int tablica[], int n) {
-    for (int i = 0; i < n - 1; ++i)
+    for (int i = 0; i < n - 1; i++)
         for (int j = 0; j < n - i - 1; ++j)
             if (tablica[j] > tablica[j + 1]) {
                 int temp = tablica[j];
@@ -38,7 +38,7 @@ void sortowanie_przez_wstrzasanie(int tablica[], int n) {
     while (zamieniono) {
         zamieniono = false;
 
-        for (int i = start; i < koniec; ++i) {
+        for (int i = start; i < koniec; i++) {
             if (tablica[i] > tablica[i + 1]) {
                 int temp = tablica[i];
                 tablica[i] = tablica[i + 1];
@@ -52,7 +52,7 @@ void sortowanie_przez_wstrzasanie(int tablica[], int n) {
         zamieniono = false;
         --koniec;
 
-        for (int i = koniec - 1; i >= start; --i) {
+        for (int i = koniec - 1; i >= start; i--) {
             if (tablica[i] > tablica[i + 1]) {
                 int temp = tablica[i];
                 tablica[i] = tablica[i + 1];
@@ -98,7 +98,7 @@ void sortowanie_szybkie(int tablica[], int poczatek, int koniec) {
     if (poczatek < koniec) {
         int i = poczatek - 1;
 
-        for (int j = poczatek; j <= koniec - 1; ++j) {
+        for (int j = poczatek; j <= koniec - 1; j++) {
             if (tablica[j] < tablica[koniec]) {
                 ++i;
                 if (i != j) {
@@ -115,7 +115,7 @@ void sortowanie_szybkie(int tablica[], int poczatek, int koniec) {
 }
 
 void sortowanie_przez_wstawianie(int tablica[], int n) {
-    for (int i = 1; i < n; ++i) {
+    for (int i = 1; i < n; i++) {
         int klucz = tablica[i];
         int j = i - 1;
 
