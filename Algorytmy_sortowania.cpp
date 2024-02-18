@@ -50,7 +50,7 @@ void sortowanie_przez_wstrzasanie(int tablica[], int n) {
         if (!zamieniono) break;
 
         zamieniono = false;
-        --koniec;
+        koniec--;
 
         for (int i = koniec - 1; i >= start; i--) {
             if (tablica[i] > tablica[i + 1]) {
@@ -102,12 +102,16 @@ void sortowanie_szybkie(int tablica[], int poczatek, int koniec) {
             if (tablica[j] < tablica[koniec]) {
                 ++i;
                 if (i != j) {
-                    swap(tablica[i], tablica[j]);
+                    int temp = tablica[i];
+                    tablica[i] = tablica[j];
+                    tablica[j] = temp;
                 }
             }
         }
 
-        swap(tablica[i + 1], tablica[koniec]);
+        int temp = tablica[i + 1];
+        tablica[i + 1] = tablica[koniec];
+        tablica[koniec] = temp;
 
         sortowanie_szybkie(tablica, poczatek, i);
         sortowanie_szybkie(tablica, i + 1, koniec);
@@ -121,7 +125,7 @@ void sortowanie_przez_wstawianie(int tablica[], int n) {
 
         while (j >= 0 && tablica[j] > klucz) {
             tablica[j + 1] = tablica[j];
-            --j;
+            j--;
         }
 
         tablica[j + 1] = klucz;
